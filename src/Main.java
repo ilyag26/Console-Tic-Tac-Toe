@@ -50,21 +50,27 @@
                 step_game++;
                 //checking win
                 Logic.CheckWin(a);
+                if(game){
+                    break;
+                }
                 //print field of game after making step
                 Logic.PrintFieldUser(a,pos1_user,pos2_user);
                 System.out.println("-------------");
                 while (!busy) {
                     int random_int = (int) Math.floor(Math.random() * (max - min + 1) + min);
                     boolean checks = Arrays.stream(arrBusy).anyMatch(i -> i == random_int);
-                    Logic.StepComputer(random_int);
                     if (!checks) {
                         busy = true;
+                        Logic.StepComputer(random_int);
                     }
                 }
                 busy = false;
                 step_game++;
                 //checking win
                 Logic.CheckWin(a);
+                if(game){
+                    break;
+                }
                 // print field after computer's step
                 Logic.PrintFieldComputer(a,pos1_computer,pos2_computer);
                 if (step_game == 12) {
