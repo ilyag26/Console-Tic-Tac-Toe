@@ -51,9 +51,9 @@ public class Logic {
             PrintWinnerO();
         }else if(massive[0][0].equals("x") && massive[1][1].equals("x") && massive[2][2].equals("x")){
             PrintWinnerX();
-        }else if(massive[0][2].equals("o") && massive[1][1].equals("o") && massive[2][1].equals("o")){
+        }else if(massive[0][2].equals("o") && massive[1][1].equals("o") && massive[2][0].equals("o")){
             PrintWinnerO();
-        }else if(massive[0][2].equals("x") && massive[1][1].equals("x") && massive[2][1].equals("x")){
+        }else if(massive[0][2].equals("x") && massive[1][1].equals("x") && massive[2][0].equals("x")){
             PrintWinnerX();
         }else if(massive[0][0].equals("o") && massive[1][0].equals("o") && massive[2][0].equals("o")){
             PrintWinnerO();
