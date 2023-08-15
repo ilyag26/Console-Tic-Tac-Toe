@@ -33,6 +33,7 @@ public class Logic {
             System.out.println();
         }
     }
+    //check to win method
     static void CheckWin(String[][] massive){
         if(massive[0][0].equals("o") && massive[0][1].equals("o") && massive[0][2].equals("o")){
             PrintWinnerO();
@@ -63,7 +64,6 @@ public class Logic {
         }else if(massive[0][2].equals("x") && massive[1][2].equals("x") && massive[2][2].equals("x")){
             PrintWinnerX();
         }
-
     }
     static void PrintWinnerO(){
         Main.game = true;
