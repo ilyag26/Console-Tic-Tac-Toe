@@ -156,7 +156,6 @@ func main() {
 		fmt.Println("Make step:")
 		fmt.Scan(&step)
 		unikCoordinate = append(unikCoordinate, step)
-		fmt.Println(len(unikCoordinate))
 		fmt.Println("Your step:")
 		makeStepUser(step, fieldGame)
 		printFields(fieldGame)
@@ -170,7 +169,6 @@ func main() {
 			randPose = rand.Intn(max-min) + min
 			if slices.Contains(unikCoordinate, randPose) == false {
 				unikCoordinate = append(unikCoordinate, randPose)
-				fmt.Println(len(unikCoordinate))
 				checkBoolPose = true
 			}
 		}
