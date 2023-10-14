@@ -13,50 +13,21 @@ func PrintFields(fields [][]string) {
 	}
 }
 
-func MakeStepUser(step int, field [][]string) {
-	switch {
-	case step == 1:
-		field[0][0] = "X"
-	case step == 2:
-		field[0][1] = "X"
-	case step == 3:
-		field[0][2] = "X"
-	case step == 4:
-		field[1][0] = "X"
-	case step == 5:
-		field[1][1] = "X"
-	case step == 6:
-		field[1][2] = "X"
-	case step == 7:
-		field[2][0] = "X"
-	case step == 8:
-		field[2][1] = "X"
-	case step == 9:
-		field[2][2] = "X"
-	}
-}
+func MakeStep(step int, field [][]string, symbol string) {
 
-func MakeStepBot(randomNumber int, field [][]string) {
-	switch {
-	case randomNumber == 1:
-		field[0][0] = "O"
-	case randomNumber == 2:
-		field[0][1] = "O"
-	case randomNumber == 3:
-		field[0][2] = "O"
-	case randomNumber == 4:
-		field[1][0] = "O"
-	case randomNumber == 5:
-		field[1][1] = "O"
-	case randomNumber == 6:
-		field[1][2] = "O"
-	case randomNumber == 7:
-		field[2][0] = "O"
-	case randomNumber == 8:
-		field[2][1] = "O"
-	case randomNumber == 9:
-		field[2][2] = "O"
+	m := map[int][2]int{
+		1: {0, 0},
+		2: {0, 1},
+		3: {0, 2},
+		4: {1, 0},
+		5: {1, 1},
+		6: {1, 2},
+		7: {2, 0},
+		8: {2, 1},
+		9: {2, 2},
 	}
+
+	field[m[step][0]][m[step][1]] = symbol
 }
 
 func CheckWin(gameIn1 bool, field [][]string, unikCoordinate []int) bool {

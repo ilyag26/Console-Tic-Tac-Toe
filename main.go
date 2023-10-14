@@ -4,7 +4,8 @@ import (
 	a "TicTacToeGo/app"
 	"fmt"
 	"math/rand"
-	"slices"
+
+	"golang.org/x/exp/slices"
 )
 
 func main() {
@@ -41,7 +42,7 @@ func main() {
 		fmt.Scan(&step)
 		unikCoordinate = append(unikCoordinate, step)
 		fmt.Println("Your step:")
-		a.MakeStepUser(step, fieldGame)
+		a.MakeStep(step, fieldGame, "X")
 		a.PrintFields(fieldGame)
 		gameIn = a.CheckWin(gameIn, fieldGame, unikCoordinate)
 		if gameIn {
@@ -56,7 +57,7 @@ func main() {
 				checkBoolPose = true
 			}
 		}
-		a.MakeStepBot(randPose, fieldGame)
+		a.MakeStep(randPose, fieldGame, "O")
 		a.PrintFields(fieldGame)
 		gameIn = a.CheckWin(gameIn, fieldGame, unikCoordinate)
 		if gameIn {
